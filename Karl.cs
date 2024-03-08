@@ -20,7 +20,8 @@ namespace VikingNS
             Duty = Global.Duty.FARMER; // Default duty for a Karl
         }
 
-        public Karl(string Name, short Health, Global.Weapon Weapon, bool Shield, Global.Duty Duty)
+        
+        public Karl(string Name, short Health, Global.Weapon Weapon, bool Shield, Global.Duty Duty = Global.Duty.FARMER)
             : base(Name, Health, Weapon, Shield) // Calls the base class constructor with arguments
         {
             this.Duty = Duty; // Set the Karl's specific duty

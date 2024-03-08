@@ -8,24 +8,24 @@
 *** DESCRIPTION : Use Visual Studio Code to create a user-defined Abstract Data Type (ADT) using C# classes named VikingNS and Global along with interface named IView and an appropriate set of C# files as discussed in class                           ***
 *********************************************************************************************/
 using System;
-
-namespace VikingNS
-{
-    using static Global; 
+namespace VikingNS;
+using static Global; 
 
     public class Program
     {
         static void Main(string[] args)
         {
-            // Create two Karl objects with different parameters
-            Karl firstPerson = new Karl(); // Default constructor (Duty: FARMER)
-            Karl secondPerson = new Karl("Vidar", 500, Global.Weapon.SWORD, true, Global.Duty.WARRIOR);
+           
+            // Create a new instance of the Karl class with default values
+            Karl firstPerson = new();
+            Karl secondPerson = new("Vidar", 50, Global.Weapon.SWORD, true, Global.Duty.WARRIOR);
 
-            // Create copy objects of the Karl instances
-            Karl firstPersonCopy = new Karl(firstPerson); // Copy constructor
-            Karl secondPersonCopy = new Karl(secondPerson); // Copy constructor
 
-            // Print details of each Karl object and its copy
+            // Create a copy of the firstPerson using a copy constructor
+            Karl firstPersonCopy = new(firstPerson);
+            Karl secondPersonCopy = new(secondPerson);
+
+            // Print information for the original and copied instances
             Console.WriteLine("Printing First Person\n");
             Console.WriteLine(firstPerson.ToString());
             Console.WriteLine("\n");
@@ -40,7 +40,6 @@ namespace VikingNS
 
             Console.WriteLine("Printing Second Person Copy\n");
             Console.WriteLine(secondPersonCopy.ToString());
-            Console.WriteLine("\n");
         }
     }
-}
+
